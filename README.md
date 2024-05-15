@@ -7,7 +7,20 @@ Repositorio Remoto donde se aloja todo lo relacionado al proyecto de catedra de 
     1) Josue Erasmo Menendez Zepeda - MZ142582
     2) Luis Eduardo Vásquez Villalta - VV121782
 
-#Tecnologias Ocupadas
+
+
+## Aplicación construida con React-Native v 0.74.1
+## Modulos Instalados:
+    1) https://akveo.github.io/react-native-ui-kitten/
+    2) https://akveo.github.io/eva-icons/#/
+    3) https://reactnavigation.org/docs/getting-started/
+    4) https://zustand-demo.pmnd.rs/
+    5) https://axios-http.com/docs/intro
+    6) https://www.npmjs.com/package/react-native-splash-screen
+    7) https://www.npmjs.com/package/@react-native-async-storage/async-storage
+
+## Documento de Anteproyecto se reubico en la carpeta /src/assets
+    AnteProyectoDPS941.pdf
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
