@@ -1,3 +1,14 @@
+# ProyectoFinalDPS941
+Repositorio Remoto donde se aloja todo lo relacionado al proyecto de catedra de la materia de Diseño y Programación de Software Multiplataforma DPS941 G01T
+
+------------
+
+### Integrantes:
+    1) Josue Erasmo Menendez Zepeda - MZ142582
+    2) Luis Eduardo Vásquez Villalta - VV121782
+
+#Tecnologias Ocupadas
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
