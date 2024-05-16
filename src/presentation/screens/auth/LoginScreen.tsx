@@ -16,8 +16,8 @@ export const LoginScreen = ({ navigation }: Props) => {
   const { login } = useAuthStore();
 
   const [form, setForm] = useState({
-    email: 'admin@gmail.com',
-    password: 'admin123'
+    email: '',
+    password: ''
   });
 
   const [isSendLogin, setIsSendLogin] = useState(false);

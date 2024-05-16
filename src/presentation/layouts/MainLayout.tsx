@@ -1,8 +1,9 @@
-import { useNavigation } from "@react-navigation/native";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Divider, Layout, MenuItem, OverflowMenu, TopNavigation, TopNavigationAction } from "@ui-kitten/components";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { CustomKittenIcon } from "../components/ui/CustomKittenIcon";
 import { useState } from "react";
+import { RootStackParams } from "../navigation/StackNavigation";
 
 interface Props {
     title: string;
@@ -19,7 +20,9 @@ export const MainLayout = ({ title, subTitle, rightAction, rightActionIcon = 'ar
 
 
     const { top } = useSafeAreaInsets();
-    const { canGoBack, goBack } = useNavigation();
+    const { canGoBack, goBack, navigate } = useNavigation();
+
+    const navigation = useNavigation<NavigationProp<RootStackParams>>();
 
     const [menuVisible, setMenuVisible] = useState(false);
 
@@ -27,20 +30,11 @@ export const MainLayout = ({ title, subTitle, rightAction, rightActionIcon = 'ar
         setMenuVisible(!menuVisible);
     };
 
-
     const renderBackAction = () => (
-        <TopNavigationAction
-            icon={<CustomKittenIcon name="arrow-back-outline" />}
-            onPress={goBack}
+        <TopNavigationAction icon={<CustomKittenIcon name="arrow-back-outline" />}
+            onPress={() => navigation.navigate('HomeScreen')}
         />
     )
-
-    const renderMenuAction = (): React.ReactElement => (
-        <TopNavigationAction
-            icon={<CustomKittenIcon name="more-vertical" />}
-            onPress={toggleMenu}
-        />
-    );
 
     const RenderRightAction = () => {
 
