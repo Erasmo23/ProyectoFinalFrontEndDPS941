@@ -12,7 +12,7 @@ interface Props {
     textCancelButton ?: string,
     onPressCancel ?: () => void;
 
-    onPressConfirm ?: () => void;
+    onPressConfirm ?: ()=> Promise<void> ;
     colorButtonConfirm ?: string,
     colorButtonCancel ?: string
 }

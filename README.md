@@ -7,6 +7,9 @@ Repositorio Remoto donde se aloja El Front-End del proyecto de catedra de la mat
     1) Josue Erasmo Menendez Zepeda - MZ142582
     2) Luis Eduardo Vásquez Villalta - VV121782
 
+## Documento de Anteproyecto se reubico en la carpeta /src/assets
+    AnteProyectoDPS941.pdf
+
 ## URL Video Fase Dos
     https://drive.google.com/file/d/1OWHfHjReirzc1Fhxx9C_WzCVm8H7GpdK/view?usp=sharing
 
@@ -23,9 +26,10 @@ Repositorio Remoto donde se aloja El Front-End del proyecto de catedra de la mat
     5) https://axios-http.com/docs/intro
     6) https://www.npmjs.com/package/react-native-splash-screen
     7) https://www.npmjs.com/package/@react-native-async-storage/async-storage
+    8) https://formik.org/docs/overview
+    9) https://github.com/jquense/yup
 
-## Documento de Anteproyecto se reubico en la carpeta /src/assets
-    AnteProyectoDPS941.pdf
+
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 

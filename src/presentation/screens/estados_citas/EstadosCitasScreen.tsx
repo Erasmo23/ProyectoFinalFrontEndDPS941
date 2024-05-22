@@ -4,7 +4,7 @@ import { useAuthStore } from "../../store/auth/useAuthStore";
 import { useEstadoCitas } from "../../hooks/useEstadoCitas";
 import { List, ListItem } from "@ui-kitten/components";
 import { EstadoCitasResponse } from "../../../infrastructure/interfaces/catalogos.responses";
-import { MainLayout } from "../../layouts/MainLayout";
+import { MainLayoutAdmin } from "../../layouts/MainLayoutAdmin";
 import { FullScreenLoader } from "../../components/ui/FullScreenLoader";
 
 
@@ -25,8 +25,8 @@ export const EstadosCitasScreen = () => {
 
 
   return (
-      <MainLayout title='Listado de Estados de Citas' subTitle='Distintos estados por lo cual puede pasar un cita'
-        rightAction={logout}
+      <MainLayoutAdmin title='Listado de Estados de Citas' subTitle='Distintos estados por lo cual puede pasar un cita'
+        rightAction={logout} isListPage
         rightActionIcon='log-out'
       >
 
@@ -47,6 +47,6 @@ export const EstadosCitasScreen = () => {
 
         }
 
-      </MainLayout>
+      </MainLayoutAdmin>
   )
 }

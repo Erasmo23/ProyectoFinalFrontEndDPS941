@@ -1,6 +1,6 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import type { RootStackParams } from '../../navigation/StackNavigation';
-import { MainLayout } from '../../layouts/MainLayout';
+import { MainLayoutAdmin } from '../../layouts/MainLayoutAdmin';
 import { useEffect } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Input, Layout, Text } from '@ui-kitten/components';
@@ -41,7 +41,7 @@ export const ConsultorioScreen = ({ navigation, route }: Props) => {
     }, []);
 
     return (
-        <MainLayout title={(isCreate) ? 'Creación de Consultorio' : 'Modificación de Consultorio'}
+        <MainLayoutAdmin title={(isCreate) ? 'Creación de Consultorio' : 'Modificación de Consultorio'}
             rightAction={logout} rightActionIcon='log-out' >
 
             <Layout style={{ flex: 1, paddingTop: top, marginHorizontal: 10 }} >
@@ -92,7 +92,7 @@ export const ConsultorioScreen = ({ navigation, route }: Props) => {
 
             </Layout>
 
-        </MainLayout>
+        </MainLayoutAdmin>
     )
 }
 

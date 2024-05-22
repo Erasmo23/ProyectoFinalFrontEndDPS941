@@ -1,4 +1,4 @@
-import { MainLayout } from '../../layouts/MainLayout';
+import { MainLayoutAdmin } from '../../layouts/MainLayoutAdmin';
 import { List, ListItem } from '@ui-kitten/components';
 import { useAuthStore } from '../../store/auth/useAuthStore';
 import { useEspecialidades } from '../../hooks/useEspecialidades';
@@ -43,8 +43,8 @@ export const EspecialidadesScreen = () => {
 
   return (
     <>
-      <MainLayout title='Listado de Especialidades' subTitle='Mantenimiento'
-        rightAction={logout}
+      <MainLayoutAdmin title='Listado de Especialidades' subTitle='Mantenimiento'
+        rightAction={logout} isListPage
         rightActionIcon='log-out'
       >
 
@@ -65,7 +65,7 @@ export const EspecialidadesScreen = () => {
 
         }
 
-      </MainLayout>
+      </MainLayoutAdmin>
 
       <FAB status='info' iconName="plus-outline" style={{ position: 'absolute',bottom: 30,right: 20,}}
         onPress={() => navigation.navigate('EspecialidadScreen', {id: 'create'})} />

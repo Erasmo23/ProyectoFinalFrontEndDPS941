@@ -1,4 +1,4 @@
-import { MainLayout } from '../../layouts/MainLayout';
+import { MainLayoutAdmin } from '../../layouts/MainLayoutAdmin';
 import { List, ListItem } from '@ui-kitten/components';
 import { useAuthStore } from '../../store/auth/useAuthStore';
 import { FullScreenLoader } from '../../components/ui/FullScreenLoader';
@@ -44,7 +44,7 @@ export const ConsultoriosScreen = () => {
 
   return (
     <>
-      <MainLayout title='Listado de Consultorios del Acilo' 
+      <MainLayoutAdmin title='Listado de Consultorios del Acilo' isListPage
         subTitle='Mantenimiento de las habitacion habilitadas para consultas'
         rightAction={logout}
         rightActionIcon='log-out'
@@ -67,7 +67,7 @@ export const ConsultoriosScreen = () => {
 
         }
 
-      </MainLayout>
+      </MainLayoutAdmin>
 
       <FAB status='info' iconName="plus-outline"
         onPress={() => navigation.navigate('ConsultorioScreen',{id: 'create'})}

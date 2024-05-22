@@ -1,18 +1,14 @@
 import 'react-native-gesture-handler';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { StackNavigation } from './presentation/navigation/StackNavigation';
-
-import * as eva from '@eva-design/eva';
-import { ApplicationProvider, IconRegistry, Layout, Text } from '@ui-kitten/components';
-import { EvaIconsPack } from '@ui-kitten/eva-icons';
-
-import { useColorScheme } from 'react-native';
-
-import SplashScreen from 'react-native-splash-screen';
 import { useEffect } from 'react';
-import { DrawerNavigation } from './presentation/navigation/DrawerNavigation';
+import { useColorScheme } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, IconRegistry} from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
+import SplashScreen from 'react-native-splash-screen';
 import { AuthProvider } from './presentation/providers/AuthProvider';
+import { StackNavigation } from './presentation/navigation/StackNavigation';
 
 
 export const ProyectoDPS941App = () => {
@@ -43,7 +39,6 @@ export const ProyectoDPS941App = () => {
                     <AuthProvider>
                         <StackNavigation />
                     </AuthProvider>
-                    {/*<DrawerNavigation />*/}
                 </NavigationContainer>
             </ApplicationProvider>
         </>

@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
 
     const navigation = useNavigation<StackNavigationProp<RootStackParams>>();
 
-    const { checkStatus, status } = useAuthStore();
+    const { checkStatus, status, user } = useAuthStore();
 
     useEffect(() => {
         checkStatus();
@@ -17,16 +17,37 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     useEffect(() => {
         
         if (status !== 'checking') {
+
             if (status === 'authenticated') {
-                navigation.reset({
-                    index: 0,
-                    routes: [{ name: 'HomeScreen' }],
-                })
+
+                if (!user!.needResetPassword){
+                    navigation.navigate("ChangePasswordScreen", {correo: user!.correo});
+                    return;
+                }
+
+                if (user?.codigoRol === 'ADMIN_USER'){
+            
+                    navigation.reset({
+                        index: 0,
+                        routes: [{ name: 'HomeScreen' }],
+                    });
+                }else if (user?.codigoRol === 'DOCTOR_USER'){
+                    navigation.reset({
+                        index: 0,
+                        routes: [{ name: 'HomeDoctorScreen' }],
+                    });
+                }else{
+                    navigation.reset({
+                        index: 0,
+                        routes: [{ name: 'HomePacienteScreen' }],
+                    });
+                }
+                
             } else {
                 navigation.reset({
                     index: 0,
                     routes: [{ name: 'LoginScreen' }],
-                })
+                });
             }
         }
     }, [status]);

@@ -1,4 +1,4 @@
-interface UsuarioSistema {
+export interface UsuarioSistema {
     id:               number;
     rol:              string;
     correo:           string;

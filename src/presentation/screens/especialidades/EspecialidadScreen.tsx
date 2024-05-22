@@ -1,6 +1,6 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import type { RootStackParams } from '../../navigation/StackNavigation';
-import { MainLayout } from '../../layouts/MainLayout';
+import { MainLayoutAdmin } from '../../layouts/MainLayoutAdmin';
 import { useEffect } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Input, Layout, Text } from '@ui-kitten/components';
@@ -43,7 +43,7 @@ export const EspecialidadScreen = ({ navigation, route }: Props) => {
 
 
   return (
-    <MainLayout title={(isCreate) ? 'Creación de Especialidad' : 'Modificación de Especialidad'}
+    <MainLayoutAdmin title={(isCreate) ? 'Creación de Especialidad' : 'Modificación de Especialidad'}
       rightAction={logout} rightActionIcon='log-out' >
 
       <Layout style={{ flex: 1, paddingTop: top, marginHorizontal: 10 }} >
@@ -94,7 +94,7 @@ export const EspecialidadScreen = ({ navigation, route }: Props) => {
 
       </Layout>
 
-    </MainLayout>
+    </MainLayoutAdmin>
   )
 }
 

@@ -1,4 +1,4 @@
-import { MainLayout } from '../../layouts/MainLayout';
+import { MainLayoutAdmin } from '../../layouts/MainLayoutAdmin';
 import { Input, Layout, List, Spinner, Text } from '@ui-kitten/components';
 import { useAuthStore } from '../../store/auth/useAuthStore';
 import { FullScreenLoader } from '../../components/ui/FullScreenLoader';
@@ -7,6 +7,7 @@ import { useUsuariosSistema } from '../../hooks/useUsuariosSistema';
 import { CustomKittenIcon } from '../../components/ui/CustomKittenIcon';
 import { useEffect, useState } from 'react';
 import { useDebouncedValue } from '../../hooks/useDebouncedValue';
+import { UsuarioSistema } from '../../../domain/entities/usuariosSistema';
 
 export const UsuariosSistemaScreen = () => {
 
@@ -60,8 +61,8 @@ export const UsuariosSistemaScreen = () => {
 
   return (
     <>
-      <MainLayout title='Listado de Usuarios con acceso al sistema' subTitle='Otorgar acceso al sistema'
-        rightAction={logout} rightActionIcon='log-out' >
+      <MainLayoutAdmin title='Listado de Usuarios con acceso al sistema' subTitle='Otorgar acceso al sistema'
+        rightAction={logout} rightActionIcon='log-out' isListPage >
 
         {
 
@@ -106,7 +107,7 @@ export const UsuariosSistemaScreen = () => {
               </>
             )
         }
-      </MainLayout>
+      </MainLayoutAdmin>
     </>
   )
 }

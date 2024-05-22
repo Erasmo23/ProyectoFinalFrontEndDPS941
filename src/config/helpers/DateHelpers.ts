@@ -5,4 +5,8 @@ export class DateUtils {
         if (!date) return '';
         return moment(date).format('DD/MM/yyyy');
     }
+
+    static parseDate (date :string) : Date {
+        return moment(date, 'DD/MM/yyyy').toDate();
+    }
 }
