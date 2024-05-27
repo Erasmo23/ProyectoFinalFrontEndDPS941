@@ -110,3 +110,13 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+# Licencia
+
+ - Tipo GPL-3.0 license [l]: Se utilizo esta licencia debido a que es una licencia de derecho de autor ampliamente usada en el mundo del software libre y código abierto, y garantiza a los usuarios finales (personas, organizaciones, compañías) la libertad de usar, estudiar, compartir (copiar) y modificar el software.
+
+ El propósito de la licencia es prevenir GNU el software se convierta en propietario.
+
+ Los creadores que deseen publicar trabajos bajo GNU GPL pueden tomar otros trabajos con licencia GNU GPL y modificarlos, distribuirlos y cobrar por dichos trabajos, siempre que acepten transmitir los mismos derechos de fuente abierta a los destinatarios.
+
+ [l]: https://github.com/Erasmo23/ProyectoFinalFrontEndDPS941/blob/main/LICENSE
