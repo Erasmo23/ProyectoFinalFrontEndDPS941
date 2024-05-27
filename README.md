@@ -113,7 +113,7 @@ To learn more about React Native, take a look at the following resources:
 
 # Licencia
 
- - Tipo GPL-3.0 license [l]: Se utilizo esta licencia debido a que es una licencia de derecho de autor ampliamente usada en el mundo del software libre y código abierto, y garantiza a los usuarios finales (personas, organizaciones, compañías) la libertad de usar, estudiar, compartir (copiar) y modificar el software.
+ - Tipo GPL-3.0 [LICENSE][l]: Se utilizo esta licencia debido a que es una licencia de derecho de autor ampliamente usada en el mundo del software libre y código abierto, y garantiza a los usuarios finales (personas, organizaciones, compañías) la libertad de usar, estudiar, compartir (copiar) y modificar el software.
 
  El propósito de la licencia es prevenir GNU el software se convierta en propietario.
 
