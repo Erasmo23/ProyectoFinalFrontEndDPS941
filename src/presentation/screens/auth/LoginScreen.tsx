@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Image, ScrollView, StyleSheet } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Card, Input, Layout, Modal, Text } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 
 import { CustomKittenIcon } from '../../components/ui/CustomKittenIcon';
 import { RootStackParams } from '../../navigation/StackNavigation';
 import { useAuthStore } from '../../store/auth/useAuthStore';
 import { LabelErrorForm } from '../../components/ui/LabelErrorForm';
+import { GOOGLE_API_WEB_CLIENT_ID } from '@env';
 
 interface Props extends StackScreenProps<RootStackParams, 'LoginScreen'> { }
 
@@ -33,7 +35,7 @@ const loginFormSchema = Yup.object().shape({
 
 export const LoginScreen = ({ navigation }: Props) => {
 
-  const { login } = useAuthStore();
+  const { login, loginGoogle } = useAuthStore();
 
   const [isSendLogin, setIsSendLogin] = useState(false);
 
@@ -53,12 +55,42 @@ export const LoginScreen = ({ navigation }: Props) => {
 
   }
 
+  const signInGoogle = async () => {
+    try {
+
+      GoogleSignin.configure({
+        webClientId: GOOGLE_API_WEB_CLIENT_ID,
+        offlineAccess: false,
+      });
+
+      await GoogleSignin.hasPlayServices();
+      const userInfo = await GoogleSignin.signIn();
+      const idToken = userInfo.idToken;
+      loginGoogle (idToken!);
+
+      return;
+      
+    } catch (error) {
+      console.log(error);
+      /*if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        console.log('User cancelled the login flow');
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        console.log('Signin in progress');
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        console.log('Play services not available or outdated');
+      } else {
+        console.log('Some other error happened', error);
+      }*/
+    }
+  };
+
   const { top } = useSafeAreaInsets();
 
   let data: Formulario = {
     email: '',
     password: ''
   }
+  
 
   return (
 
@@ -77,7 +109,7 @@ export const LoginScreen = ({ navigation }: Props) => {
               <Image source={require('../../../assets/logo.png')} style={styles.logo} />
             </Layout>
 
-            <Layout style={{ marginBottom: 30 }}>
+            <Layout style={{ marginBottom: 15 }}>
               <Text category='h2' status='info' style={{ textAlign: 'center' }} >Acilo Esperanza de Santa Ana</Text>
             </Layout>
 
@@ -131,6 +163,16 @@ export const LoginScreen = ({ navigation }: Props) => {
               </Button>
             </Layout>
 
+            <Layout style={{ height: 20 }} />
+
+            <Layout>
+              <Button accessoryLeft={<CustomKittenIcon name='google-outline' color='color-basic-1100' />}
+                status='basic'
+                onPress={() => signInGoogle()} >
+                Continuar con Google
+              </Button>
+            </Layout>
+
             <Layout style={{ height: 40 }} />
 
             <Layout style={{ justifyContent: 'center', alignItems: 'center' }}>
@@ -165,7 +207,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 325,
-    height: 300
+    height: 270
   },
   containerModal: {
     minHeight: 192,

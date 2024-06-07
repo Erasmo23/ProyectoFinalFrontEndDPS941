@@ -28,6 +28,7 @@ Repositorio Remoto donde se aloja El Front-End del proyecto de catedra de la mat
     7) https://www.npmjs.com/package/@react-native-async-storage/async-storage
     8) https://formik.org/docs/overview
     9) https://github.com/jquense/yup
+    10) https://github.com/react-native-google-signin/google-signin
 
 
 

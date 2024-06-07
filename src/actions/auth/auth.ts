@@ -63,3 +63,22 @@ export const resetPasswordAction = async (correo : string) : Promise<ActionAPIRe
         throw new Error(`Error fetching api /auth/resetPassword/${correo}`);
     }
 }
+
+
+export const authLoginGoogleAction = async (token : string) => {
+
+    try {
+
+        const { data } = await consultorioApi.post<AuthResponse>('/auth/OAuth2/Google/', {
+            token
+        });
+
+        return returnUserToken(data);
+
+
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+
+}
