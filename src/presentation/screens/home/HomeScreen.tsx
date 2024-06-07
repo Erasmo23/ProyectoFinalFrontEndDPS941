@@ -50,6 +50,11 @@ export const HomeScreen = ({ navigation }: Props) => {
           <Text>Listado de Usuarios que pueden ingresar al sistema</Text>
         </Card>
 
+        <Card status='warning' style={{ margin: 10, flex: 1 }} header={<CustomHeaderCard text='Doctores Registrados' />}
+          onPress={() => navigation.navigate('DoctoresScreen')} >
+          <Text>Listado de Doctores que atienden en el acilo</Text>
+        </Card>
+
       </Layout>
 
       <Layout style={{ marginTop: 1, flex: 1 }} />

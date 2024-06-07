@@ -14,6 +14,14 @@ import { UsuariosSistemaScreen } from '../screens/usuariosSistema/UsuariosSistem
 import { ChangePassword2Screen } from '../screens/auth/ChangePassword2Screen';
 import { PacientesScreen } from '../screens/pacientes/PacientesScreen';
 import { PacienteScreen } from '../screens/pacientes/PacienteScreen';
+import { DoctoresScreen } from '../screens/doctores/DoctoresScreen';
+import { DoctorScreen } from '../screens/doctores/DoctorScreen';
+import { CitasPendientesScreen } from '../screens/citas/CitasPendientesScreen';
+import { RegistroCitaScreen } from '../screens/citas/RegistroCitaScreen';
+import { ReprogramarCitaScreen } from '../screens/citas/ReProgramarCitaScreen';
+import { HistorialCitasScreen } from '../screens/citas/HistorialCitasScreen';
+import { FinalizarCitaScreen } from '../screens/citas/FinalizarCitaScreen';
+import { VerCitaScreen } from '../screens/citas/VerCitaScreen';
 
 
 export type RootStackParams = {
@@ -32,6 +40,14 @@ export type RootStackParams = {
     ChangePasswordScreen: {correo: string};
     PacientesScreen: undefined;
     PacienteScreen: {id: string};
+    DoctoresScreen: undefined;
+    DoctorScreen: {id: string};
+    CitasPendientesScreen : undefined;
+    RegistroCitaScreen : {id: string};
+    ReprogramarCitaScreen : {id: number};
+    HistorialCitasScreen : undefined;
+    FinalizarCitaScreen : {id: number};
+    VerCitaScreen : {id: number};
 }
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -65,6 +81,18 @@ export const StackNavigation = () =>  {
       <Stack.Screen name="ChangePasswordScreen" component={ChangePassword2Screen} />
       <Stack.Screen name='PacientesScreen' component={ PacientesScreen } />
       <Stack.Screen name='PacienteScreen' component={PacienteScreen} />
+
+      <Stack.Screen name='DoctoresScreen' component={ DoctoresScreen } />
+      <Stack.Screen name='DoctorScreen' component={DoctorScreen} />
+
+      <Stack.Screen name='CitasPendientesScreen' component={CitasPendientesScreen} />
+      <Stack.Screen name='RegistroCitaScreen' component={RegistroCitaScreen} />
+      <Stack.Screen name='ReprogramarCitaScreen' component={ReprogramarCitaScreen} />
+      <Stack.Screen name='HistorialCitasScreen' component={HistorialCitasScreen} />
+
+      <Stack.Screen name='FinalizarCitaScreen' component={FinalizarCitaScreen} />
+      <Stack.Screen name='VerCitaScreen' component={VerCitaScreen} />
+
     </Stack.Navigator>
   );
 }

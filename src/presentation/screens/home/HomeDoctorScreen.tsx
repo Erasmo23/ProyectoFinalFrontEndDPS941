@@ -34,10 +34,17 @@ export const HomeDoctorScreen = ({ navigation }: Props) => {
           <Text>Mantenimiento de Pacientes registrados en el Acilo</Text>
         </Card>
 
-        <Card status='primary' style={{ margin: 10, flex: 1 }} header={<CustomHeaderCard text='Citas' />}
-          onPress={() => { }} >
-          <Text>Registro de Citas</Text>
+        <Card status='warning' style={{ margin: 10, flex: 1 }} header={<CustomHeaderCard text='Citas Pendientes' />}
+          onPress={() => { navigation.navigate('CitasPendientesScreen') }} >
+          <Text>Registro, Reprogramacion y Finalización de Citas</Text>
         </Card>
+
+        <Card status='success' style={{ margin: 10, flex: 1 }} header={<CustomHeaderCard text='Historial Citas' />}
+          onPress={() => { navigation.navigate('HistorialCitasScreen') }} >
+          <Text>Historial de Citas ya finalizadas o canceladas</Text>
+        </Card>
+
+
 
       </Layout>
 

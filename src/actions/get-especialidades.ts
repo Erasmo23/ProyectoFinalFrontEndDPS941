@@ -1,3 +1,4 @@
+import { Item } from "react-native-picker-select";
 import { consultorioApi } from "../config/api/consultorioApi";
 import type { Especialidad } from "../domain/entities/especialidad";
 import type { ActionAPIResponse, CatalogoAPIResponse } from "../infrastructure/interfaces/catalogos.responses";
@@ -66,6 +67,21 @@ export const saveOrEditEspecialidadAction = async (form : Especialidad, isCreate
     } catch (error) {
         console.error(error);
         throw new Error (`Error fetching especialidades api ${mappingAction}`);
+    }
+
+}
+
+
+export const getSelectEspecialidadesAction = async () : Promise<Item []>  => {
+
+    try {
+        const {data} = await consultorioApi.get<CatalogoAPIResponse[]>('/especialidades/findall');
+        return data.map( apiResponse => EspecialidadMapper.especialidadesAPIResponseToSelectOption(apiResponse));
+
+    } catch (error) {
+        console.error(error);
+        throw new Error ('Error fetching especialidades api /especialidades/findall');
+
     }
 
 }
