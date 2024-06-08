@@ -7,11 +7,16 @@ Repositorio Remoto donde se aloja El Front-End del proyecto de catedra de la mat
     1) Josue Erasmo Menendez Zepeda - MZ142582
     2) Luis Eduardo Vásquez Villalta - VV121782
 
-## Documento de Anteproyecto se reubico en la carpeta /src/assets
-    AnteProyectoDPS941.pdf
+## Documentos en la carpeta /src/assets
+    Manual Tecnico y Mock ups -> AnteProyectoDPS941.pdf
+    Manual de Usuario -> manualUsuario.pdf
+    Link de Trello: https://trello.com/w/proyectofinaldps9412024
 
 ## URL Video Fase Dos
     https://drive.google.com/file/d/1OWHfHjReirzc1Fhxx9C_WzCVm8H7GpdK/view?usp=sharing
+
+## URL Video Fase Tres
+    https://drive.google.com/file/d/1vZJXCF_iR-9HqfI0N9LNsbjMx5U12iD5/view?usp=sharing
 
 ## Repositorio Back-End (Complemento)
     https://github.com/luvasquez/ProyectoFinalBackEndDPS941/tree/development
